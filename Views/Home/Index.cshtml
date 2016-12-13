@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+@model List<MVCBlog.Models.Recipe>
+
+@foreach (var recipe in Model)
+{
+
+    <div class="row">
+        <div class="recipe col-md-6">
+            <h2>@recipe.Title</h2>
+            <div class="about">
+                Posted on <i>@recipe.Date.ToString("d")</i>
+                @if (recipe.Author != null)
+                {
+                    @:by <i>@recipe.Author.FullName</i>
+
+                }
+     
+               
+            </div>
+            <p>@recipe.Body</p>
+            </div>
+        </div>
+}
+    
