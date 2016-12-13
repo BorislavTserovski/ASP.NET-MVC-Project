@@ -1,0 +1,88 @@
+﻿
+.navbar-brand{
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family:'Freestyle Script';
+    font-size:50px;
+        
+}
+.navbar-nav{
+    color:white;
+    text-shadow:2px 2px 4px #000000;
+    font-family:Miriam;
+    font-size:medium;
+
+
+}
+.Recipes{
+    font-family:'Freestyle Script';
+    text-shadow: 2px 2px 4px #000000;
+    font-size:50px;
+   
+}
+.recipe>h2, .recipe>div{
+    background:none;
+    padding: 10px;
+    margin: 0;
+    color:white;
+    font-family:'Times New Roman';
+    text-shadow:2px 2px 4px #000000;
+    
+   
+    
+    
+}
+
+.recipe>h2{
+    margin-top: 15px;
+    font-family:'Times New Roman', Times, serif;
+    text-shadow:2px 2px 4px #000000;
+  
+}
+body {
+    background: url(images/bg.jpg) no-repeat center center fixed; 
+  
+  background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    color:white;
+    text-shadow:2px 2px 4px #000000;
+   
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+footer{
+    
+    position:fixed;
+    bottom:5px;
+    right:660px;
+    color:white;
+    text-shadow:2px 2px 4px #000000;
+}
+
+
