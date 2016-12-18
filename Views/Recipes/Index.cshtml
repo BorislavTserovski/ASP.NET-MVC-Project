@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVCBlog.Models.Recipe>
+@model IEnumerable<MVCBlog.Models.Recipe>
 
 @{
     ViewBag.Title = "Index";
@@ -27,6 +27,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
+        <th>
+
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
         <th></th>
     </tr>
 
@@ -35,11 +39,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Body)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            <img src="data:image;base64,@System.Convert.ToBase64String(item.Image)" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
