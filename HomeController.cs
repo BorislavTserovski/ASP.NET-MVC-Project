@@ -1,4 +1,4 @@
-﻿using MVCBlog.Models;
+using MVCBlog.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
