@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -20,11 +20,13 @@ namespace MVCBlog.Models
         [Required]
         public string Body { get; set; }
 
-        [Required]
+       
         [DisplayName("Date Added")]
         [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Date { get; set; }
 
+
+        public byte[] Image { get; set; }
         
         public ApplicationUser Author { get; set;}
     }
