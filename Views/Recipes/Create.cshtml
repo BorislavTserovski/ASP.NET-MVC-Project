@@ -1,10 +1,10 @@
-@model MVCBlog.Models.Recipe
+﻿@model MVCBlog.Models.Recipe
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Add Recipe</h2>
+<h2 class="Recipes">Add Recipe</h2>
 
 
 @using (Html.BeginForm("Create", "Recipes", FormMethod.Post,
@@ -25,6 +25,7 @@
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
+                    
                     <label for="file">Upload Image:</label>
                     <input type="file" name="file" id="file" style="width: 100%;" />
                     <input type="submit" value="Upload" class="submit" /> 

@@ -1,7 +1,8 @@
-@{
+﻿@{
     ViewBag.Title = "Home";
 }
 @model List<MVCBlog.Models.Recipe>
+    <body class="HomeBg"></body>
 
 @foreach (var recipe in Model)
 {
@@ -11,12 +12,16 @@
             <h2>@recipe.Title</h2>
             <div class="about">
                 Posted on <i>@recipe.Date.ToString("d")</i>
-                @if (recipe.Author != null)
-                {
-                    @:by <i>@recipe.Author.FullName</i>
+               
+                     
 
-                }
-     
+                
+     <div>
+         @if (recipe.Image != null)
+         {
+         <img src="data:image;base64,@System.Convert.ToBase64String(recipe.Image)"class="image" />
+         }
+     </div>
                
             </div>
             <p>@recipe.Body</p>
