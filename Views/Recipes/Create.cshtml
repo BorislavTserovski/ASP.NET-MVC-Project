@@ -1,10 +1,10 @@
-﻿@model MVCBlog.Models.Recipe
+﻿@model MVCBlog.Models.RecipeViewModel
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2 class="Recipes">Add Recipe</h2>
+<h2 class="Recipes">Add a Recipe</h2>
 
 
 @using (Html.BeginForm("Create", "Recipes", FormMethod.Post,
@@ -25,10 +25,8 @@
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
+          
                     
-                    <label for="file">Upload Image:</label>
-                    <input type="file" name="file" id="file" style="width: 100%;" />
-                    <input type="submit" value="Upload" class="submit" /> 
         <div class="form-group">
             @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -37,24 +35,32 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
-            </div>
-        </div>
+      
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CategoryId, new { @class = "control-label col-md-2" })
+                        <div class="dropdown col-sm-4">
+                            @Html.DropDownListFor(m => m.CategoryId,
+                        new SelectList(Model.Categories, "Id", "Name"),
+                        new { @class = "btn btn-info col-sm-12" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Image, new { @class = "control-label col-md-2" })
+                    <input type="file" name="file" id="file" class="control-label col-md-2" style="width: 100%;" />
+                    </div>
+       
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-danger" })
 </div>
 
 @section Scripts {

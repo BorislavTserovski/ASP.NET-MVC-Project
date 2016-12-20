@@ -1,7 +1,8 @@
-﻿@{
+﻿
+@model List<MVCBlog.Models.Recipe>
+@{
     ViewBag.Title = "Home";
 }
-@model List<MVCBlog.Models.Recipe>
     <body class="HomeBg"></body>
 
 @foreach (var recipe in Model)
@@ -24,8 +25,11 @@
      </div>
                
             </div>
-            <p>@recipe.Body</p>
+            
             </div>
+        </div>
+        <div>
+            @Html.ActionLink("Details","Details","Recipes", new { id = recipe.Id }, new { @class = "btn btn-info" })
         </div>
 }
     
