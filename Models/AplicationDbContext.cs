@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -16,11 +17,15 @@ namespace MVCBlog.Models
         {
         }
 
+        public IDbSet<Recipe> Recipes { get; set; }
+
+        public virtual IDbSet<Category> Categories { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<MVCBlog.Models.Recipe>Recipes { get; set; }
+        
     }
 }

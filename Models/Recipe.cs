@@ -10,6 +10,17 @@ namespace MVCBlog.Models
 {
     public class Recipe
     {
+        public Recipe()
+        {
+        }
+        public Recipe(string authorId, string title, string body,int categoryId)
+        {
+            this.AuthorId = authorId;
+            this.Title = title;
+            this.Body = body;
+            this.CategoryId = categoryId;
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -31,11 +42,16 @@ namespace MVCBlog.Models
         
         public byte[] Image { get; set; }
 
-       // public bool isAuthor(string id)
-        //{
-      //      return this.AuthorId.Equals(id);
-      //  }
+       
         
         public ApplicationUser Author { get; set;}
+
+        [Required]
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
+
+      
     }
 }
